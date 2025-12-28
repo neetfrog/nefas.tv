@@ -17,7 +17,7 @@ export const Renders3DSection: React.FC = () => {
         <TerminalLines sectionId="3d-content" />
       <p>&gt; some abstract pixel statues i cooked up in blender, c4d, and houdini. it&apos;s mostly shiny spheres and particle nonsense.</p>
 
-      <InstagramEmbed />
+      <InstagramEmbed account="nefas.gfx" />
 
     </div>
   );

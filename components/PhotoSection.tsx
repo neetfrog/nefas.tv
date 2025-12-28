@@ -1,27 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import { TerminalLines } from './TerminalLines.tsx';
 import { useSection } from './SectionContext.tsx';
-import { useFetchJson } from './hooks.ts';
-import { useFlattenPhotos } from '../lib/utils/flattenPhotos.ts';
 import { InstagramEmbed } from './InstagramEmbed.tsx';
-import { AlbumItemComponent } from './AlbumItem.tsx';
-import { PhotoItemComponent } from './PhotoItem.tsx';
-import type { PhotoEntry, PhotoItem, AlbumItem } from '../lib/types/content.ts';
-
-interface FlatPhoto extends PhotoItem { albumTitle?: string; }
 
 export const PhotoSection: React.FC = () => {
   const { active } = useSection();
-  const { data, loading, error } = useFetchJson<PhotoEntry[]>('/data/photos.json');
-  const [selectedAlbum, setSelectedAlbum] = useState<string | null>(null);
-
-  const [flatPhotos, albums]: [FlatPhoto[], AlbumItem[]] = useFlattenPhotos(data);
-
-  const openImage = (url: string) => window.open(url, '_blank');
-
-  const displayedPhotos = selectedAlbum ? flatPhotos.filter(p => p.albumTitle === selectedAlbum) : flatPhotos;
 
   return (
     <div
@@ -33,34 +18,7 @@ export const PhotoSection: React.FC = () => {
       <TerminalLines sectionId="photo-content" />
       <p>&gt; i point my camera at things. mostly around the streets.</p>
 
-      <InstagramEmbed />
-
-      {selectedAlbum && (
-        <button onClick={() => setSelectedAlbum(null)} style={{ marginBottom: '1rem', background: 'none', border: '1px solid var(--secondary-color)', color: 'var(--secondary-color)', padding: '0.5rem', cursor: 'pointer' }}>
-          &lt; Back to Albums
-        </button>
-      )}
-
-      {loading && <p>Loading photos...</p>}
-      {error && <p style={{ color: 'red' }}>[ERROR] {error}</p>}
-      {!loading && !error && (
-        <div className="grid-container">
-          {!selectedAlbum && albums.map((a) => (
-            <AlbumItemComponent
-              key={a.title}
-              album={a}
-              onClick={() => setSelectedAlbum(a.title)}
-            />
-          ))}
-          {selectedAlbum && displayedPhotos.map((p: FlatPhoto, i: number) => (
-            <PhotoItemComponent
-              key={p.image + i}
-              photo={p}
-              onClick={() => openImage(p.image)}
-            />
-          ))}
-        </div>
-      )}
+      <InstagramEmbed account="nefas.jpg" />
     </div>
   );
 };

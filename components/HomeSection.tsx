@@ -1,19 +1,47 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { TerminalLines } from './TerminalLines.tsx';
 import { useSection } from './SectionContext.tsx';
-import { useLatest } from '../lib/hooks/useLatest.ts';
-import { ContentBlock } from './ContentBlock.tsx';
-import type { PhotoEntry, Render3DItem, VideoItem, WebdevProjectItem, BlogPostMeta } from '../lib/types/content.ts';
+
+import { SectionId } from './SectionContext.tsx';
+
+const commandMap: Record<string, SectionId> = {
+  photos: 'photo-content',
+  photography: 'photo-content',
+  '3d': '3d-content',
+  renders: '3d-content',
+  webdev: 'webdev-content',
+  web: 'webdev-content',
+  blog: 'blog-content',
+  blogs: 'blog-content',
+  video: 'video-content',
+  videos: 'video-content',
+  misc: 'misc-content'
+};
 
 export const HomeSection: React.FC = () => {
   const { active, setActive } = useSection();
-  const blogs = useLatest<BlogPostMeta>('/data/posts.json', 3);
-  const videos = useLatest<VideoItem>('/data/videos.json', 3);
-  const photos = useLatest<PhotoEntry>('/data/photos.json', 3);
-  const renders3d = useLatest<Render3DItem>('/data/3d.json', 3);
-  const webdev = useLatest<WebdevProjectItem>('/data/webdev.json', 3);
+  const [typingFinished, setTypingFinished] = useState(false);
+  const [command, setCommand] = useState('');
+
+  const handleFinish = useCallback(() => {
+    setTypingFinished(true);
+  }, []);
+
+  const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const cmd = command.toLowerCase().trim();
+      if (commandMap[cmd]) {
+        setActive(commandMap[cmd]);
+      } else if (cmd === 'help') {
+        alert('Available commands: photos, 3d, webdev, blog, video, misc');
+      } else if (cmd) {
+        alert(`Unknown command: ${cmd}. Type 'help' for commands.`);
+      }
+      setCommand('');
+    }
+  };
 
   return (
     <div
@@ -21,107 +49,37 @@ export const HomeSection: React.FC = () => {
       className="content-section"
       style={{ display: active === 'home-content' ? 'block' : 'none' }}
     >
-      <TerminalLines sectionId="home-content" />
-      <ContentBlock title="> latest web stuff" caption="> building and hoping that it just works" onJump={() => setActive('webdev-content')}>
-        {webdev.loading ? (
-          <p>Loading...</p>
-        ) : (
-          <div className="grid-container">
-            {webdev.data.map((p, idx) => {
-              const obj = p as unknown as { id?: string; image?: string; title?: string; date?: string };
-              const key = obj.id ?? obj.title ?? idx;
-              return (
-                <a key={key} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('webdev-content'); }}>
-                  <img src={obj.image ?? ''} alt={obj.title ?? 'untitled'} style={{ width: '100%', height: 120, objectFit: 'cover', marginBottom: 12, borderRadius: 6 }} />
-                  <div>
-                    <p className="home-post-type">[WEBDEV]</p>
-                    <h4 className="home-post-title">{obj.title ?? 'untitled'}</h4>
-                  </div>
-                </a>
-              );
-            })}
+      <TerminalLines sectionId="home-content" onFinish={handleFinish} />
+      {typingFinished && (
+        <div style={{ marginTop: 20 }}>
+          <div style={{ color: '#00ff9d', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span aria-hidden style={{ flex: '0 0 auto' }}>&gt;</span>
+            <input
+              type="text"
+              aria-label="Command input"
+              value={command}
+              onChange={(e) => setCommand(e.target.value)}
+              onKeyDown={handleCommand}
+              spellCheck={false}
+              autoCorrect="off"
+              autoCapitalize="off"
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#00ff9d',
+                fontFamily: "'VT323', monospace",
+                fontSize: 'inherit',
+                lineHeight: 1.15,
+                outline: 'none',
+                flex: 1,
+                minWidth: 0,
+                letterSpacing: '0.02em'
+              }}
+              placeholder="try: photos | 3d | webdev"
+            />
           </div>
-        )}
-      </ContentBlock>
-      <ContentBlock title="> fresh photos" caption="> megapixels and emulsion" onJump={() => setActive('photo-content')}>
-        {photos.loading ? <p>Loading...</p> : (
-          <div className="grid-container">
-            {photos.data.map((p, idx) => {
-              if ((p as unknown as { type?: string }).type === 'album') {
-                const a = p as unknown as { title?: string; coverImage?: string; date?: string; description?: string };
-                const key = a.title ?? a.coverImage ?? idx;
-                return (
-                  <a key={key} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('photo-content'); }}>
-                    <img src={a.coverImage} alt={a.title} style={{ width: '100%', height: 120, objectFit: 'cover', marginBottom: 12, borderRadius: 6 }} />
-                    <div>
-                      <p className="home-post-type">[ALBUM]</p>
-                      <h4 className="home-post-title">{a.title}</h4>
-                    </div>
-                  </a>
-                );
-              }
-              const photo = p as unknown as { title?: string; thumbnail?: string; date?: string; description?: string };
-              return (
-                <a key={photo.title ?? photo.thumbnail ?? idx} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('photo-content'); }}>
-                  <img src={photo.thumbnail} alt={photo.title} style={{ width: '100%', height: 120, objectFit: 'cover', marginBottom: 12, borderRadius: 6 }} />
-                  <div>
-                    <p className="home-post-type">[PHOTO]</p>
-                    <h4 className="home-post-title">{photo.title}</h4>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        )}
-      </ContentBlock>
-      <ContentBlock title="> new renders" caption="> fresh cgi right off the gpu" onJump={() => setActive('3d-content')}>
-        {renders3d.loading ? <p>Loading...</p> : (
-          <div className="grid-container">
-            {renders3d.data.map((r, idx) => {
-              const rKey = ((r as unknown as { id?: string }).id) ?? r.title ?? r.thumbnail ?? idx;
-              return (
-              <a key={rKey} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('3d-content'); }}>
-                <img src={r.thumbnail} alt={r.title} style={{ width: '100%', height: 120, objectFit: 'cover', marginBottom: 12, borderRadius: 6 }} />
-                <div>
-                  <p className="home-post-type">[3D]</p>
-                  <h4 className="home-post-title">{r.title}</h4>
-                </div>
-              </a>
-            )})}
-          </div>
-        )}
-      </ContentBlock>
-  <ContentBlock title="> latest videos" caption="> a collection of moving pictures. i&apos;ll replace these with my own stuff eventually. probably." onJump={() => setActive('video-content')}>
-        {videos.loading ? <p>Loading...</p> : (
-          <div className="grid-container">
-            {videos.data.map((v, idx) => {
-              const vKey = ((v as unknown as { id?: string }).id) ?? v.title ?? v.thumbnail ?? idx;
-              return (
-              <a key={vKey} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('video-content'); }}>
-                <img src={v.thumbnail} alt={v.title} style={{ width: '100%', height: 120, objectFit: 'cover', marginBottom: 12, borderRadius: 6 }} />
-                <div>
-                  <p className="home-post-type">[VIDEO]</p>
-                  <h4 className="home-post-title">{v.title}</h4>
-                </div>
-              </a>
-            )})}
-          </div>
-        )}
-      </ContentBlock>
-      <ContentBlock title="> recent blogs" caption="> fresh thoughts for your brain" onJump={() => setActive('blog-content')}>
-        {blogs.loading ? <p>Loading...</p> : (
-          <div className="grid-container">
-            {blogs.data.map((b, idx) => (
-              <a key={b.id ?? b.title ?? idx} href="#" className="grid-item home-post-item" onClick={(e) => { e.preventDefault(); setActive('blog-content'); }}>
-                <div>
-                  <p className="home-post-type">[BLOG]</p>
-                  <h4 className="home-post-title">{b.title}</h4>
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
-      </ContentBlock>
+        </div>
+      )}
     </div>
   );
 };

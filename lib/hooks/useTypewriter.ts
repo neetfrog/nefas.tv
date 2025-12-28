@@ -2,7 +2,7 @@
 import React from 'react';
 import { TerminalLine } from '../types/TerminalLine.ts';
 
-export const useTypewriter = (container: React.RefObject<HTMLElement | null>, lines: TerminalLine[] | undefined, active: boolean, sectionId: string) => {
+export const useTypewriter = (container: React.RefObject<HTMLElement | null>, lines: TerminalLine[] | undefined, active: boolean, sectionId: string, onFinish?: () => void) => {
   React.useEffect(() => {
     if (!active || !lines || !container.current) return;
     const el = container.current;
@@ -85,6 +85,7 @@ export const useTypewriter = (container: React.RefObject<HTMLElement | null>, li
       if (section) {
         section.classList.remove('typing-in-progress');
       }
+      onFinish?.();
     })();
 
     return () => { 
@@ -95,5 +96,5 @@ export const useTypewriter = (container: React.RefObject<HTMLElement | null>, li
         section.classList.remove('typing-in-progress');
       }
     };
-  }, [active, lines, container, sectionId]);
+  }, [active, lines, container, sectionId, onFinish]);
 };

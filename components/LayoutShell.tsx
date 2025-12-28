@@ -4,7 +4,6 @@ import { Header } from './Header.tsx';
 import { BackgroundEffects } from './BackgroundEffects.tsx';
 import { WinampPlayer } from './WinampPlayer.tsx';
 import { Navigation } from './Navigation.tsx';
-import { FooterTimestamp } from './FooterTimestamp.tsx';
 import { SectionProvider } from './SectionContext.tsx';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
 import { HomeSection } from './HomeSection.tsx';
@@ -48,14 +47,13 @@ const Inner: React.FC = () => {
         <footer>
           <div className="footer-content">
             <div className="footer-left">
-              <FooterTimestamp />
-              <span className="footer-status">[ ONLINE ]</span>
+              <span className="footer-copyright">© 2025 nefas.tv</span>
             </div>
             <div className="footer-center">
-              <span>© 2025 nefas.tv</span>
+              <span className="footer-status">[ ONLINE ]</span>
             </div>
             <div className="footer-right">
-              <span className="footer-terminal">terminal_active.exe</span>
+              <span className="footer-terminal">sudo ./nefas.tv --mode=guest</span>
             </div>
           </div>
         </footer>

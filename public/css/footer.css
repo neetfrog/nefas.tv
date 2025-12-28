@@ -37,11 +37,6 @@ footer {
     gap: 1rem;
 }
 
-.footer-timestamp {
-    color: #666;
-    font-size: 1rem;
-}
-
 .footer-status {
     color: var(--accent-color);
     animation: pulse 2s infinite;

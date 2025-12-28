@@ -1,7 +1,11 @@
 "use client";
 import React, { useEffect } from 'react';
 
-export const InstagramEmbed: React.FC = () => {
+interface InstagramEmbedProps {
+  account?: string;
+}
+
+export const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ account = 'nefas.jpg' }) => {
   useEffect(() => {
     if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
       const script = document.createElement('script');
@@ -17,7 +21,7 @@ export const InstagramEmbed: React.FC = () => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <blockquote
           className="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/nefas.gfx/"
+          data-instgrm-permalink={`https://www.instagram.com/${account}/`}
           data-instgrm-version="14"
           style={{
             background: '#fff',
@@ -28,7 +32,7 @@ export const InstagramEmbed: React.FC = () => {
             minWidth: 326
           }}
         >
-          <a href="https://www.instagram.com/nefas.gfx/" target="_blank" rel="noopener" style={{ color: '#125688', fontWeight: 'bold' }}>
+          <a href={`https://www.instagram.com/${account}/`} target="_blank" rel="noopener" style={{ color: '#125688', fontWeight: 'bold' }}>
             View on Instagram
           </a>
         </blockquote>
