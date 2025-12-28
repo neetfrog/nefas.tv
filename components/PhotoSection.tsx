@@ -14,7 +14,7 @@ export const PhotoSection: React.FC = () => {
       className="content-section"
       style={{ display: active === 'photo-content' ? 'block' : 'none' }}
     >
-  <h2>&gt; photography</h2>
+
       <TerminalLines sectionId="photo-content" />
       <p>&gt; i point my camera at things. mostly around the streets.</p>
 

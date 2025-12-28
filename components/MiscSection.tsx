@@ -59,12 +59,10 @@ export const MiscSection: React.FC = () => {
       className="content-section"
       style={{ display: active === 'misc-content' ? 'block' : 'none' }}
     >
-  <h2>&gt; misc</h2>
-      <TerminalLines sectionId="misc-content" />
 
-  <p>&gt; a digital shoebox for things that don&apos;t fit anywhere else. links, files. check back once in a while.</p>
-      
-      <AccordionSection title="&gt;&gt; interesting links">
+        <TerminalLines sectionId="misc-content" />
+
+      <AccordionSection title="&gt;&gt; links">
         <div className="links-container">
           {links.loading && <p>Loading links...</p>}
           {links.data?.map((l: LinkItem, i: number) => <p key={l.url ?? l.title ?? i}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.title}</a></p>)}

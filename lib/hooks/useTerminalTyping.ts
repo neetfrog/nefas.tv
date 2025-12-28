@@ -5,11 +5,19 @@ import { blogContent } from '../../components/blogContent.ts';
 export const useTerminalTyping = (active: boolean, sectionId: string) => {
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const [terminalDone, setTerminalDone] = useState(false);
+  const typingInProgressRef = useRef(false);
 
   useEffect(() => {
-    if (!active) return;
+    if (!active) {
+      setTerminalDone(false);
+      typingInProgressRef.current = false;
+      if (terminalRef.current) {
+        terminalRef.current.innerHTML = '';
+      }
+      return;
+    }
     const el = terminalRef.current;
-    if (!el || el.childElementCount > 0) return;
+    if (!el || el.childElementCount > 0 || typingInProgressRef.current) return;
 
     // Add typing class to hide content during typing
     const blogSection = document.getElementById(`${sectionId}-content`);
@@ -17,6 +25,7 @@ export const useTerminalTyping = (active: boolean, sectionId: string) => {
       blogSection.classList.add('typing-in-progress');
     }
 
+    typingInProgressRef.current = true;
     let cancelled = false;
     (async () => {
       for (const line of blogContent) {
@@ -41,9 +50,11 @@ export const useTerminalTyping = (active: boolean, sectionId: string) => {
         blogSection.classList.remove('typing-in-progress');
       }
       setTerminalDone(true);
+      typingInProgressRef.current = false;
     })();
     return () => {
       cancelled = true;
+      typingInProgressRef.current = false;
       // Cleanup: remove typing class
       if (blogSection) {
         blogSection.classList.remove('typing-in-progress');

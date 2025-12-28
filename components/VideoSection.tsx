@@ -15,7 +15,6 @@ export const VideoSection: React.FC = () => {
       className="content-section"
       style={{ display: active === 'video-content' ? 'block' : 'none' }}
     >
-  <h2>&gt; video feed</h2>
         <TerminalLines sectionId="video-content" />
       <p>&gt; a collection of moving pictures to rot your brain. i&apos;ll replace these with my own stuff eventually. probably.</p>
       {loading && <p>Loading...</p>}

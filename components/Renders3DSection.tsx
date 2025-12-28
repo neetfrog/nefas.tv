@@ -13,7 +13,6 @@ export const Renders3DSection: React.FC = () => {
       className="content-section"
       style={{ display: active === '3d-content' ? 'block' : 'none' }}
     >
-  <h2>&gt; 3D stuff</h2>
         <TerminalLines sectionId="3d-content" />
       <p>&gt; some abstract pixel statues i cooked up in blender, c4d, and houdini. it&apos;s mostly shiny spheres and particle nonsense.</p>
 

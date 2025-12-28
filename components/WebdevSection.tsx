@@ -15,7 +15,7 @@ export const WebdevSection: React.FC = () => {
       className="content-section"
       style={{ display: active === 'webdev-content' ? 'block' : 'none' }}
     >
-  <h2>&gt; webdev projects</h2>
+
       <TerminalLines sectionId="webdev-content" />
       <p>&gt; i occasionally write code that gets deployed to the internet. no startup grind, no VC buzzwords — just late-night commits and whatever felt fun to build.</p>
       {loading && <p>Loading...</p>}
