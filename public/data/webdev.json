@@ -1,7 +1,7 @@
 [
   {
     "id": "tldrwire",
-    "title": "TLDRWire.xyz",
+    "title": "TLDRWire",
     "description": "Get the news, minus the noise. AI powered news aggregator.",
     "image": "images/webdev/tldrwire.jpg",
     "thumbnail": "images/webdev/thumbnails/tldrwire.jpg",
@@ -11,7 +11,7 @@
   },
   {
     "id": "monolog",
-    "title": "Monolog.ink",
+    "title": "Monolog",
     "description": "Capture a meaningful moment each day in a private journal — build a lasting, ad-free archive of your life.",
     "image": "images/webdev/monolog.jpg",
     "thumbnail": "images/webdev/thumbnails/monolog.jpg",
@@ -21,7 +21,7 @@
   },
   {
     "id": "tunedin",
-    "title": "TunedIn.space",
+    "title": "TunedIn",
     "description": "a social media platform for sharing your favorite music",
     "image": "images/webdev/tunedin.jpg",
     "thumbnail": "images/webdev/tunedin.jpg",
