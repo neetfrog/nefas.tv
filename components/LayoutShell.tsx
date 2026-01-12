@@ -7,10 +7,9 @@ import { Navigation } from './Navigation.tsx';
 import { SectionProvider } from './SectionContext.tsx';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
 import { HomeSection } from './HomeSection.tsx';
-import { BlogSection } from './BlogSection.tsx';
 import { PhotoSection } from './PhotoSection.tsx';
 import { VideoSection } from './VideoSection.tsx';
-import { Renders3DSection } from './Renders3DSection.tsx';
+import { RendersGfxSection } from './RendersGfxSection.tsx';
 import { WebdevSection } from './WebdevSection.tsx';
 import { MiscSection } from './MiscSection.tsx';
 
@@ -38,9 +37,8 @@ const Inner: React.FC = () => {
             <HomeSection />
             <VideoSection />
             <PhotoSection />
-            <Renders3DSection />
+            <RendersGfxSection />
             <WebdevSection />
-            <BlogSection />
             <MiscSection />
           </ErrorBoundary>
         </main>

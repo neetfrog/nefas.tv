@@ -6,9 +6,8 @@ const sections: { id: SectionId; label: string }[] = [
   { id: 'home-content', label: '[ home ]' },
   { id: 'video-content', label: '[ video ]' },
   { id: 'photo-content', label: '[ photo ]' },
-  { id: '3d-content', label: '[ 3d ]' },
+  { id: 'gfx-content', label: '[ gfx ]' },
   { id: 'webdev-content', label: '[ webdev ]' },
-  { id: 'blog-content', label: '[ blog ]' },
   { id: 'misc-content', label: '[ misc ]' }
 ];
 

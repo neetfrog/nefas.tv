@@ -9,12 +9,11 @@ import { SectionId } from './SectionContext.tsx';
 const commandMap: Record<string, SectionId> = {
   photos: 'photo-content',
   photography: 'photo-content',
-  '3d': '3d-content',
-  renders: '3d-content',
+  '3d': 'gfx-content',
+  renders: 'gfx-content',
+  gfx: 'gfx-content',
   webdev: 'webdev-content',
   web: 'webdev-content',
-  blog: 'blog-content',
-  blogs: 'blog-content',
   video: 'video-content',
   videos: 'video-content',
   misc: 'misc-content'
@@ -75,7 +74,7 @@ export const HomeSection: React.FC = () => {
                 minWidth: 0,
                 letterSpacing: '0.02em'
               }}
-              placeholder="try: photos | 3d | webdev"
+              placeholder="try: photos | gfx | webdev"
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
-import { blogContent } from '../../components/blogContent.ts';
+import { sectionTerminalContent } from '../data/sectionTerminalContent.ts';
 
 export const useTerminalTyping = (active: boolean, sectionId: string) => {
   const terminalRef = useRef<HTMLDivElement | null>(null);
@@ -27,8 +27,9 @@ export const useTerminalTyping = (active: boolean, sectionId: string) => {
 
     typingInProgressRef.current = true;
     let cancelled = false;
+    const content = sectionTerminalContent[sectionId] || [];
     (async () => {
-      for (const line of blogContent) {
+      for (const line of content) {
         if (cancelled) return;
         const lineDiv = document.createElement('div');
         lineDiv.style.lineHeight = '1.1';

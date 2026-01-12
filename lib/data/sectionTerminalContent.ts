@@ -56,7 +56,7 @@ export const sectionTerminalContent: Record<string, TerminalLine[]> = {
     { text: '', delay: 50 },
     { text: '* Click to zoom into the void *', color: '#ff00ff', delay: 50 }
   ],
-  '3d-content': [
+  'gfx-content': [
     { text: '> nvidia-smi | grep "thermal throttling"', color: '#00ff9d', delay: 300 },
     { text: '> GPU 0: YES - 99°C - Warranty voided', color: '#ff0000', delay: 200 },
     { text: '> Worth it for the subsurface scattering', color: '#00ff9d', delay: 100 },

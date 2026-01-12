@@ -5,9 +5,8 @@ export type SectionId =
   | 'home-content'
   | 'video-content'
   | 'photo-content'
-  | '3d-content'
+  | 'gfx-content'
   | 'webdev-content'
-  | 'blog-content'
   | 'misc-content';
 
 interface SectionContextValue {
