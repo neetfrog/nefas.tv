@@ -111,9 +111,6 @@ export const MiscSection: React.FC = () => {
                   ▼
                 </span>
               </h4>
-              <div style={{ fontSize: '0.9em', color: 'var(--text-color)', marginBottom: 8 }}>
-                {new Date(p.date).toLocaleDateString()} {p.tags && p.tags.length > 0 && `• ${p.tags.join(', ')}`}
-              </div>
               <div 
                 style={{
                   maxHeight: expanded.has(p.title) ? 'none' : '0',
@@ -121,8 +118,13 @@ export const MiscSection: React.FC = () => {
                   transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1)',
                 }}
               >
+                {expanded.has(p.title) && (
+                  <div style={{ fontSize: '0.9em', color: 'var(--text-color)', marginBottom: 8 }}>
+                    {new Date(p.date).toLocaleDateString()} {p.tags && p.tags.length > 0 && `• ${p.tags.join(', ')}`}
+                  </div>
+                )}
                 {p.content.en.map((paragraph, pidx) => (
-                  <p key={pidx} style={{ marginBottom: 12, lineHeight: 1.4 }}>
+                  <p key={pidx} style={{ marginBottom: 6, lineHeight: 1.18 }}>
                     {paragraph}
                   </p>
                 ))}

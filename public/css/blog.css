@@ -94,6 +94,18 @@
     padding: 15px;
 }
 
+/* Reduce line spacing specifically for blog post content to avoid large gaps */
+/* Use a higher-specificity selector to override global .content-section p rules */
+.content-section#misc-content p,
+#misc-content .blog-full-content p,
+#misc-content p {
+    line-height: 1.12; /* tighter line spacing for blog text */
+    margin: 0 0 0.45rem 0; /* smaller gap between paragraphs */
+    margin-top: 0; /* ensure no extra top gap */
+}
+
+/* If you still see large gaps, we may need to tweak font-size or remove paragraph margins in imported content */
+
 .blog-snippet-header {
     cursor: pointer;
     display: flex;

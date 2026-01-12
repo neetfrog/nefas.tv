@@ -33,19 +33,21 @@
     }
   },
   {
-    "title": "My Favorite Obsolete Tech",
+    "title": "Building nefas.tv: Architecture Decisions and Tech Stack",
     "date": "2025-11-16T10:30:00Z",
-    "tags": ["tech", "nostalgia", "obsolete"],
+    "tags": ["webdev", "nextjs", "architecture", "portfolio"],
     "content": {
       "en": [
-        "Obsolete tech has charm. Floppy disks - tiny storage, satisfying clicks.",
-        "Pagers - beeps for messages. No smartphones needed.",
-        "VHS tapes - fuzzy video, rewind sounds. Better than streaming.",
-        "CRT monitors - heavy, warm glow. Real feel.",
-        "Old tech reminds us simplicity was better. Miss the nostalgia.",
-        "Walkmans for music on the go. No subscriptions.",
-        "Typewriters - mechanical typing, no distractions.",
-        "These gadgets taught patience. No instant gratification."
+        "Building a personal portfolio requires careful tech choices.",
+        "Chose Next.js for SSR, performance, and developer experience.",
+        "React components for modular, reusable UI elements.",
+        "Custom CSS with VT323 font for retro terminal aesthetic.",
+        "File-based routing keeps project structure clean and intuitive.",
+        "Static generation for fast loading, dynamic sections for interactivity.",
+        "Terminal animations use custom hooks and CSS transitions.",
+        "Image optimization with Next.js Image component for performance.",
+        "Deployed on Vercel for seamless CI/CD and global CDN.",
+        "Future: add more interactive features, improve accessibility."
       ]
     }
   }

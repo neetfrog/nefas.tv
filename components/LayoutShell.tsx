@@ -51,7 +51,7 @@ const Inner: React.FC = () => {
               <span className="footer-status">[ ONLINE ]</span>
             </div>
             <div className="footer-right">
-              <span className="footer-terminal">sudo ./nefas.tv --mode=guest</span>
+              <span className="footer-terminal"></span>
             </div>
           </div>
         </footer>
