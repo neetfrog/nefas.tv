@@ -35,10 +35,10 @@ const Inner: React.FC = () => {
         <main id="content-area">
           <ErrorBoundary>
             <HomeSection />
-            <VideoSection />
+            <WebdevSection />
             <PhotoSection />
             <RendersGfxSection />
-            <WebdevSection />
+            <VideoSection />
             <MiscSection />
           </ErrorBoundary>
         </main>

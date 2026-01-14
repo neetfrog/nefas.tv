@@ -7,7 +7,7 @@ import { useSection } from './SectionContext.tsx';
 import { SectionId } from './SectionContext.tsx';
 
 const commandMap: Record<string, SectionId> = {
-  photos: 'photo-content',
+  photo: 'photo-content',
   photography: 'photo-content',
   '3d': 'gfx-content',
   renders: 'gfx-content',
@@ -66,16 +66,12 @@ export const HomeSection: React.FC = () => {
         
         // Handle easter egg commands
         switch (cmd) {
-          case 'help':
-            appendLine('Navigation: photos, 3d, webdev, video, misc', '#ffffff');
-            appendLine('Easter eggs: egg', '#ffffff');
-            break;
           case 'egg':
             doEgg();
             break;
           default:
             if (cmd) {
-              appendLine(`Unknown command: ${cmd}. Type 'help' for commands.`, '#ffaa00');
+              appendLine(`Unknown command: ${cmd}.`, '#ffaa00');
             }
         }
       }
@@ -121,7 +117,7 @@ export const HomeSection: React.FC = () => {
                 minWidth: 0,
                 letterSpacing: '0.02em'
               }}
-              placeholder="try: photos | egg | help"
+              placeholder="try: webdev | photo | gfx | video | misc | egg"
             />
           </div>
         </div>
