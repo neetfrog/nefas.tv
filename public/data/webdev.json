@@ -88,5 +88,95 @@
     "url": "https://phaseshift.vercel.app/",
     "date": "2025-11-25",
     "tags": ["webdev", "wave", "simulation", "interactive"]
+  },
+  {
+    "id": "toycam",
+    "title": "ToyCam",
+    "description": "Minimal web camera playground for experimental filters and photo effects.",
+    "image": "images/webdev/greentext.jpg",
+    "thumbnail": "images/webdev/greentext.jpg",
+    "url": "https://toy-cam.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "photo", "camera", "filters"]
+  },
+  {
+    "id": "unsuckwindows",
+    "title": "UnsuckWindows",
+    "description": "A cleaner Windows utility for removing clutter and restoring control.",
+    "image": "images/webdev/unsuckwindows.jpg",
+    "thumbnail": "images/webdev/unsuckwindows.jpg",
+    "url": "https://unsuck-windows.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "windows", "utility", "productivity"]
+  },
+  {
+    "id": "minidash",
+    "title": "MiniDash",
+    "description": "Compact dashboard for quick access to weather, news, and trends.",
+    "image": "images/webdev/minidash.jpg",
+    "thumbnail": "images/webdev/minidash.jpg",
+    "url": "https://theminidash.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "dashboard", "productivity", "terminal"]
+  },
+  {
+    "id": "duplicateclear",
+    "title": "DuplicateClear",
+    "description": "Browser utility for finding and removing duplicate files quickly.",
+    "image": "images/webdev/duplicateclear.jpg",
+    "thumbnail": "images/webdev/duplicateclear.jpg",
+    "url": "https://dupeclear.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "utility", "files", "cleanup"]
+  },
+  {
+    "id": "zenflow",
+    "title": "Zenflow",
+    "description": "A compact, privacy-first Kanban board for calm task planning.",
+    "image": "images/webdev/zenflow.jpg",
+    "thumbnail": "images/webdev/zenflow.jpg",
+    "url": "https://thezenflow.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "kanban", "productivity", "workflow"]
+  },
+  {
+    "id": "subswap",
+    "title": "SubSwap",
+    "description": "A subscription manager for switching and tracking recurring services.",
+    "image": "images/webdev/subswap.jpg",
+    "thumbnail": "images/webdev/subswap.jpg",
+    "url": "https://thesubswap.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "subscriptions", "finance", "management"]
+  },
+  {
+    "id": "loopforge",
+    "title": "LoopForge",
+    "description": "A browser-based music loop creation tool for rapid audio ideas.",
+    "image": "images/webdev/loopforge.jpg",
+    "thumbnail": "images/webdev/loopforge.jpg",
+    "url": "https://theloopforge.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "music", "loops", "audio"]
+  },
+  {
+    "id": "pdfeditor",
+    "title": "PDFEditor",
+    "description": "A lightweight online PDF editor for simple document edits.",
+    "image": "images/webdev/pdfeditor.jpg",
+    "thumbnail": "images/webdev/pdfeditor.jpg",
+    "url": "https://pdf-editor-six-wine.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "pdf", "editor", "productivity"]
+  },
+  {
+    "id": "thefilmlab",
+    "title": "TheFilmLab",
+    "description": "Film discovery and creative tools for cinephiles and storytellers.",
+    "image": "images/webdev/thefilmlab.jpg",
+    "thumbnail": "images/webdev/thefilmlab.jpg",
+    "url": "https://thefilmlab.vercel.app/",
+    "date": "2026-04-16",
+    "tags": ["webdev", "film", "creative", "media"]
   }
 ]
