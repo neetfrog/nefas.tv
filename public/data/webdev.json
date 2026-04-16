@@ -60,12 +60,12 @@
     "tags": ["webdev", "particles", "physics", "interactive"]
   },
   {
-    "id": "chiptrax",
-    "title": "CHIP-TRAX",
+    "id": "chipbeats",
+    "title": "ChipBeats",
     "description": "Web-based drum machine for creating beats in your browser",
     "image": "images/webdev/drummachine.jpg",
     "thumbnail": "images/webdev/thumbnails/drummachine.jpg",
-    "url": "https://chiptrax.vercel.app/", 
+    "url": "https://chip-beats.vercel.app/",
     "date": "2025-07-22",
     "tags": ["webdev", "music", "drums", "audio"]
   },
