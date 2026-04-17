@@ -178,5 +178,15 @@
     "url": "https://thefilmlab.vercel.app/",
     "date": "2026-04-16",
     "tags": ["webdev", "film", "creative", "media"]
+  },
+  {
+    "id": "redditunes",
+    "title": "ReddiTunes",
+    "description": "Retro-inspired music explorer that turns Reddit content into playlists.",
+    "image": "images/webdev/redditunes.jpg",
+    "thumbnail": "images/webdev/redditunes.jpg",
+    "url": "https://redditunes.vercel.app/",
+    "date": "2026-04-17",
+    "tags": ["webdev", "music", "reddit", "playlist"]
   }
 ]
