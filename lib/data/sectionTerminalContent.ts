@@ -19,7 +19,7 @@ export const sectionTerminalContent: Record<string, TerminalLine[]> = {
     { text: '', delay: 15 },
     { text: 'STATUS: comfier than a warm ThinkPad on your lap', color: '#00ff9d', delay: 15 },
     { text: '', delay: 15 },
-    { text: '✉ ignasnefas@gmail.com | git: @ignasnefas', color: '#00ffff', delay: 30 },
+    { text: '✉ ignasnefas@gmail.com | git/x: @neetfrog', color: '#00ffff', delay: 30 },
     { text: '↓ Memory dump initiated ↓', color: '#ff00ff', delay: 15 }
   ],
   'video-content': [
