@@ -92,7 +92,7 @@
   {
     "id": "toycam",
     "title": "ToyCam",
-    "description": "Minimal web camera playground for experimental filters and photo effects.",
+    "description": "Apply various effects to your live camera feed including film grain, dithering, ASCII art, and pixelization.",
     "image": "images/webdev/greentext.jpg",
     "thumbnail": "images/webdev/greentext.jpg",
     "url": "https://toy-cam.vercel.app/",
@@ -102,7 +102,7 @@
   {
     "id": "unsuckwindows",
     "title": "UnsuckWindows",
-    "description": "A cleaner Windows utility for removing clutter and restoring control.",
+    "description": "A personal guide for better Windows experience.",
     "image": "images/webdev/unsuckwindows.jpg",
     "thumbnail": "images/webdev/unsuckwindows.jpg",
     "url": "https://unsuck-windows.vercel.app/",
@@ -142,7 +142,7 @@
   {
     "id": "subswap",
     "title": "SubSwap",
-    "description": "A subscription manager for switching and tracking recurring services.",
+    "description": "Stop overpaying for subscriptions Scan your subscriptions and instantly discover free, open-source, or cheaper alternatives that do the same job.",  ",
     "image": "images/webdev/subswap.jpg",
     "thumbnail": "images/webdev/subswap.jpg",
     "url": "https://thesubswap.vercel.app/",
@@ -152,7 +152,7 @@
   {
     "id": "loopforge",
     "title": "LoopForge",
-    "description": "A browser-based music loop creation tool for rapid audio ideas.",
+    "description": "A high-performance web application for creating seamless looping 3D animations with advanced visual effects.",
     "image": "images/webdev/loopforge.jpg",
     "thumbnail": "images/webdev/loopforge.jpg",
     "url": "https://theloopforge.vercel.app/",
@@ -172,7 +172,7 @@
   {
     "id": "thefilmlab",
     "title": "TheFilmLab",
-    "description": "Film discovery and creative tools for cinephiles and storytellers.",
+    "description": "In-browser analog film emulator. Upload a photo, pick a preset, and adjust tone, grain, and effects.",
     "image": "images/webdev/thefilmlab.jpg",
     "thumbnail": "images/webdev/thefilmlab.jpg",
     "url": "https://thefilmlab.vercel.app/",
