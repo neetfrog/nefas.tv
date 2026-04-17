@@ -142,7 +142,7 @@
   {
     "id": "subswap",
     "title": "SubSwap",
-    "description": "Stop overpaying for subscriptions Scan your subscriptions and instantly discover free, open-source, or cheaper alternatives that do the same job.",  ",
+    "description": "Stop overpaying for subscriptions. Scan your subscriptions and instantly discover free, open-source, or cheaper alternatives that do the same job.",
     "image": "images/webdev/subswap.jpg",
     "thumbnail": "images/webdev/subswap.jpg",
     "url": "https://thesubswap.vercel.app/",
