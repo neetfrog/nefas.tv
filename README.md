@@ -1,5 +1,7 @@
 # nefas.tv
 
+![nefas.tv screenshot](public/screenshot.png)
+
 A small, vaporwave-inspired personal / portfolio site built with Next.js (App Router) and TypeScript. It bundles a retro visual style with interactive sections for photos, blog posts, audio playback and small demos.
 
 ## Highlights
